@@ -18,7 +18,7 @@ const subscribers: Subscriber[] = [
 
 const RecentSubscribers = () => {
   return (
-    <div className="bg-neutral-800/50 rounded-xl p-4 sm:p-6">
+    <div className="bg-neutral-800/50  rounded-xl p-4 sm:p-6">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-medium text-white">Recent Subscribers</h3>
         <select className="bg-neutral-800 text-neutral-300 rounded-lg px-3 py-2 text-sm">

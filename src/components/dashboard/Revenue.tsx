@@ -16,7 +16,9 @@ const Revenue = () => {
     options: {
       chart: {
         height: 350,
-        type: 'area' as const
+        type: 'area' as const,
+        background: 'transparent'
+
       },
       dataLabels: {
         enabled: false

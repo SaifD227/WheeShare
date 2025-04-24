@@ -18,7 +18,8 @@ import image1 from "../../assets/bg-gradient-img.png";
 import image2 from "../../assets/bg-gradient-img (1).png";
 import Revenue from "../dashboard/Revenue";
 import UsersByDevice from "../dashboard/UsersByDevice";
-import UsersByCountry from "../dashboard/UsersByCountry";
+// import UsersByCountry from "../dashboard/UsersByCountry";
+import LastChart from "../dashboard/LastChart";
 
 export function SidebarDemo() {
   const navigate = useNavigate();
@@ -248,7 +249,9 @@ const Dashboard = () => {
         <UsersByDevice />
 
         {/* Users by Country Section */}
-        <UsersByCountry />
+        {/* <UsersByCountry /> */}
+
+        <LastChart />
       </div>
     </div>
   );

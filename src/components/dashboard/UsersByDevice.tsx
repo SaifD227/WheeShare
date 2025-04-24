@@ -67,8 +67,8 @@ const UsersByDevice = () => {
   const series = [Math.round((totalUsers / 10000) * 100)]; 
 
   return (
-    <div className="bg-neutral-800/50 rounded-xl p-4 sm:p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="bg-neutral-800/50 rounded-xl    p-4 sm:p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
         {/* Gauge Chart */}
         <div>
           <div className="text-center mb-4">

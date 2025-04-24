@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactApexChart from 'react-apexcharts';
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 
 interface CountryData {
   country: string;
@@ -8,11 +8,11 @@ interface CountryData {
 }
 
 const countryData: CountryData[] = [
-  { country: 'United States', users: 3000, percentage: 30 },
-  { country: 'United Kingdom', users: 2500, percentage: 25 },
-  { country: 'Canada', users: 2500, percentage: 25 },
-  { country: 'Australia', users: 1000, percentage: 10 },
-  { country: 'Spain', users: 1000, percentage: 10 },
+  { country: "United States", users: 3000, percentage: 30 },
+  { country: "United Kingdom", users: 2500, percentage: 25 },
+  { country: "Canada", users: 2500, percentage: 25 },
+  { country: "Australia", users: 1000, percentage: 10 },
+  { country: "Spain", users: 1000, percentage: 10 },
 ];
 
 const UsersByCountry = () => {
@@ -20,67 +20,69 @@ const UsersByCountry = () => {
 
   const barOptions = {
     chart: {
-      type: 'bar' as const,
+      type: "bar" as const,
       toolbar: {
-        show: false
+        show: false,
       },
-      background: 'transparent'
+      background: "transparent",
     },
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: '40%',
-        borderRadius: 4
-      }
+        barHeight: "40%",
+        borderRadius: 4,
+      },
     },
-    colors: ['#933FFE'],
+    colors: ["#933FFE"],
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     xaxis: {
-      categories: countryData.map(item => item.country),
+      categories: countryData.map((item) => item.country),
       labels: {
         style: {
-          colors: '#AEB9E1'
-        }
+          colors: "#AEB9E1",
+        },
       },
       axisBorder: {
-        show: false
+        show: false,
       },
       axisTicks: {
-        show: false
-      }
+        show: false,
+      },
     },
     yaxis: {
       labels: {
         style: {
-          colors: '#AEB9E1'
-        }
-      }
+          colors: "#AEB9E1",
+        },
+      },
     },
     grid: {
-      borderColor: '#2D2D2D',
+      borderColor: "#2D2D2D",
       strokeDashArray: 4,
       xaxis: {
         lines: {
-          show: true
-        }
+          show: true,
+        },
       },
       yaxis: {
         lines: {
-          show: false
-        }
-      }
+          show: false,
+        },
+      },
     },
     theme: {
-      mode: 'dark' as const
-    }
+      mode: "dark" as const,
+    },
   };
 
-  const barSeries = [{
-    name: 'Users',
-    data: countryData.map(item => item.percentage)
-  }];
+  const barSeries = [
+    {
+      name: "Users",
+      data: countryData.map((item) => item.percentage),
+    },
+  ];
 
   return (
     <div className="bg-neutral-800/50 rounded-xl p-4 sm:p-6">
@@ -88,8 +90,7 @@ const UsersByCountry = () => {
         <div>
           <h3 className="text-lg font-medium text-white">Users by country</h3>
           <p className="text-2xl font-semibold text-white flex items-center gap-2">
-            {totalUsers}K
-            <span className="text-green-400 text-sm">+55.3%</span>
+            {totalUsers}K<span className="text-green-400 text-sm">+55.3%</span>
           </p>
         </div>
         <select className="bg-neutral-800 text-neutral-300 rounded-lg px-3 py-2 text-sm">
@@ -126,11 +127,26 @@ const UsersByCountry = () => {
             {/* Location Markers */}
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Add glowing dots for each location */}
-              <div className="w-3 h-3 rounded-full bg-[#933FFE] shadow-lg shadow-[#933FFE]/50 animate-pulse" style={{ position: 'absolute', left: '20%', top: '30%' }} />
-              <div className="w-3 h-3 rounded-full bg-[#18C8FF] shadow-lg shadow-[#18C8FF]/50 animate-pulse" style={{ position: 'absolute', left: '45%', top: '20%' }} />
-              <div className="w-3 h-3 rounded-full bg-[#6C3BFF] shadow-lg shadow-[#6C3BFF]/50 animate-pulse" style={{ position: 'absolute', left: '30%', top: '25%' }} />
-              <div className="w-3 h-3 rounded-full bg-[#18C8FF] shadow-lg shadow-[#18C8FF]/50 animate-pulse" style={{ position: 'absolute', left: '80%', top: '60%' }} />
-              <div className="w-3 h-3 rounded-full bg-[#933FFE] shadow-lg shadow-[#933FFE]/50 animate-pulse" style={{ position: 'absolute', left: '50%', top: '40%' }} />
+              <div
+                className="w-3 h-3 rounded-full bg-[#933FFE] shadow-lg shadow-[#933FFE]/50 animate-pulse"
+                style={{ position: "absolute", left: "20%", top: "30%" }}
+              />
+              <div
+                className="w-3 h-3 rounded-full bg-[#18C8FF] shadow-lg shadow-[#18C8FF]/50 animate-pulse"
+                style={{ position: "absolute", left: "45%", top: "20%" }}
+              />
+              <div
+                className="w-3 h-3 rounded-full bg-[#6C3BFF] shadow-lg shadow-[#6C3BFF]/50 animate-pulse"
+                style={{ position: "absolute", left: "30%", top: "25%" }}
+              />
+              <div
+                className="w-3 h-3 rounded-full bg-[#18C8FF] shadow-lg shadow-[#18C8FF]/50 animate-pulse"
+                style={{ position: "absolute", left: "80%", top: "60%" }}
+              />
+              <div
+                className="w-3 h-3 rounded-full bg-[#933FFE] shadow-lg shadow-[#933FFE]/50 animate-pulse"
+                style={{ position: "absolute", left: "50%", top: "40%" }}
+              />
             </div>
           </div>
         </div>
@@ -151,10 +167,10 @@ const UsersByCountry = () => {
         {countryData.map((item, index) => (
           <div key={index} className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div 
-                className="w-2 h-2 rounded-full" 
-                style={{ 
-                  backgroundColor: index % 2 === 0 ? '#933FFE' : '#18C8FF'
+              <div
+                className="w-2 h-2 rounded-full"
+                style={{
+                  backgroundColor: index % 2 === 0 ? "#933FFE" : "#18C8FF",
                 }}
               />
               <span className="text-neutral-400">{item.country}</span>
@@ -167,4 +183,4 @@ const UsersByCountry = () => {
   );
 };
 
-export default UsersByCountry; 
+export default UsersByCountry;
